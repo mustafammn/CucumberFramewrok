@@ -7,13 +7,13 @@ Feature: Add employees
     When user clicks on PIM option
     And user clicks on Add employee button
 
-  @regression
+  @dropdown @regression
   Scenario: Adding one employee from feature file
     And user enters firstname and lastname
     And user clicks on save button
     Then employee added successfully
 
-  @ddt
+  @ddt @regression
   Scenario Outline: Add employee
     And user enters "<firstName>" "<middleName>" and "<lastName>"
     And user clicks on save button
@@ -25,13 +25,13 @@ Feature: Add employees
       |testabc  |MS        |testxyz |
       |test987  |MS        |test321 |
 
-  @sampleCucumberScenario
+  @sampleCucumberScenario @regression
   Scenario: Adding one employee using cucumber feature
     And user enters direct data "sebastianfn" "christinemn" and "yogitaln"
     And user clicks on save button
     Then employee added successfully
 
-  @datatable
+  @datatable @regression
   Scenario: Add employee
     When user add multiple employees and verify they are added
       |firstName|middleName|lastName|
@@ -39,7 +39,6 @@ Feature: Add employees
       |testabc  |MS        |testxyz |
       |test987  |MS        |test321 |
 
-
-    @excel
-    Scenario: Adding employee from excel file
-    When user adds multiple employees from excel file "EmployeeData" sheet and verify the added employee
+  @excel
+  Scenario: Adding employees from excel file
+    When user adds multiple employees from excel file using "EmployeeData" sheet and verify the added employee

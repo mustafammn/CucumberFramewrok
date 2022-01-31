@@ -21,9 +21,13 @@ import org.junit.runner.RunWith;
         monochrome = true,
 
         //tags will identify the scenario based on the tag we provide to the feature file
-        tags = "@excel",
-        plugin = {"pretty", "html:target/cucumber.html"}
+        tags = "@batch11",
+        plugin = {"pretty", "html:target/cucumber.html", "json:target/cucumber.json",
+                //this failed.txt file holds all the scenarios which are failed during execution
+                "rerun:target/failed.txt"
+        }
 )
+
 
 
 public class Smoke {
