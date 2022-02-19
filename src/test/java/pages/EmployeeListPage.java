@@ -16,6 +16,9 @@ public class EmployeeListPage extends CommonMethods {
     @FindBy(id="empsearch_employee_name_empName")
     public WebElement empSearchStepByName;
 
+    @FindBy (css = "#sidenav > li.selected > a")
+    public WebElement qualificationButton;
+
     public EmployeeListPage(){
         PageFactory.initElements(driver,this);
     }
