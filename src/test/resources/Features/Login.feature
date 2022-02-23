@@ -31,6 +31,18 @@ Feature: Login feature
 
 
 
+  @smoke @review
+  Scenario Outline: Valid admin login
+    When user enters different "<username>" and "<password>"
+    And user clicks on login button
+    Then "<admin>" user is successfully logged in
+    Examples:
+      |username|password|admin|
+      |Admin   |Hum@nhrm123     |Admin|
+      |Admin   |Hum@nhrm123     |Admin|
+      |Admin   |Hum@nhrm123     |Admin|
+      |Admin   |Hum@nhrm123     |Admin|
+      |Admin   |Hum@nhrm123     |Admin|
 
 
 
